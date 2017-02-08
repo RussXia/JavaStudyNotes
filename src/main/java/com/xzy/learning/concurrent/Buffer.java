@@ -3,6 +3,7 @@ package com.xzy.learning.concurrent;
 import java.util.concurrent.locks.ReentrantLock;
 
 /**
+ * 响应中断锁demo
  * Created by RuzzZZ on 2017/2/7.
  */
 public class Buffer {

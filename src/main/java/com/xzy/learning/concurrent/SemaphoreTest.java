@@ -3,6 +3,9 @@ package com.xzy.learning.concurrent;
 import java.util.concurrent.*;
 
 /**
+ * 计数器，作用类似于阀门。
+ * 最多只能达到permits个允许项工作，超过的则阻塞等待
+ * 支持公平锁
  * Created by RuzzZZ on 2017/2/8.
  */
 public class SemaphoreTest {
@@ -23,7 +26,7 @@ public class SemaphoreTest {
                         Thread.sleep(1000);
                         //释放许可
                         semp.release();
-                        System.out.println("线程" + Thread.currentThread().getName() + "释放许可："  + num);
+                        System.out.println("线程" + Thread.currentThread().getName() + "释放许可：" + num);
                         System.out.println("当前允许进入的任务个数：" + semp.availablePermits());
                     } catch (InterruptedException e) {
                         e.printStackTrace();

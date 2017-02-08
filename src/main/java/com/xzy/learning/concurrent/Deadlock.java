@@ -3,6 +3,7 @@ package com.xzy.learning.concurrent;
 import static java.lang.System.out;
 
 /**
+ * 死锁demo
  * Created by RuzzZZ on 2017/2/8.
  */
 public class Deadlock implements Runnable {

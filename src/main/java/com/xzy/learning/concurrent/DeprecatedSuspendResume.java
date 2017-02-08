@@ -1,6 +1,8 @@
 package com.xzy.learning.concurrent;
 
 /**
+ * 线程方法之suspend(挂起)resume(恢复)，stop(没有演示)
+ * 目前已弃用(极不安全，建议使用标志位来标识)
  * Created by RuzzZZ on 2017/2/8.
  */
 public class DeprecatedSuspendResume implements Runnable {

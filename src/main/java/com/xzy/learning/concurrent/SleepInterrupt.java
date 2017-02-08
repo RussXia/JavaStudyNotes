@@ -1,6 +1,7 @@
 package com.xzy.learning.concurrent;
 
 /**
+ * 线程中断demo
  * Created by RuzzZZ on 2017/2/8.
  */
 public class SleepInterrupt implements Runnable {
