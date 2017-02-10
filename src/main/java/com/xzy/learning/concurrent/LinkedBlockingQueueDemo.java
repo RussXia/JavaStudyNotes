@@ -10,7 +10,7 @@ import static java.lang.System.out;
  * 使用LinkedBlockingQueue实现一个生产者和消费者模型
  * Created by RuzzZZ on 2017/2/10.
  */
-public class BlockingQueueDemo {
+public class LinkedBlockingQueueDemo {
 
     public static void main(String[] args) {
         final BlockingQueue<Integer> queue = new LinkedBlockingQueue<Integer>(3);
