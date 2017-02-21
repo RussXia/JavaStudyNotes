@@ -36,5 +36,6 @@ public class ThreadLocalDemo implements Runnable {
         }
 
         //结论：ThreadLocal对象:每个线程操作的都是属于自己线程的变量副本，而不会影响其他线程的变量副本。
+        //ThreadLocal和Thread的同步机制的比较:ThreadLocal-->空间换时间,Thread-->时间换空间
     }
 }
