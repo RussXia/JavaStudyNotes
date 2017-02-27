@@ -19,7 +19,7 @@ public class Main {
 
         QueryTransportPriceForm form = new QueryTransportPriceForm();
         form.setCarInfoList(list);
-        form.setArriveLocationName("HaHaHa");
+        form.setArriveLocationName("HaHaHa1");
         FileOutputStream fout=new FileOutputStream("testForm.txt");
         ObjectOutputStream out=new ObjectOutputStream(fout);
         out.writeObject(form);
