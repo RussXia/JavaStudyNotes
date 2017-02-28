@@ -11,7 +11,7 @@ public class Main {
 
     public static void main(String[] args) throws IOException, ClassNotFoundException {
         CarSnapInfo carSnapInfo = new CarSnapInfo();
-        carSnapInfo.setModelName("Test123");
+        carSnapInfo.setModelName("Test123111");
         carSnapInfo.setNumber(1);
 
         List<CarSnapInfo> list = new ArrayList<>();
