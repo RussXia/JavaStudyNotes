@@ -5,9 +5,9 @@ import com.google.common.base.Optional;
 import static java.lang.System.out;
 
 /**
- * Optional有两个实现子类(Absent和Present)
- * Absent代表引用为null的情况
- * Present代表存在引用的情况
+ * {@link Optional}有两个实现子类(Absent和Present)
+ * {@link com.google.common.base.Absent}代表引用为null的情况
+ * {@link com.google.common.base.Present}代表存在引用的情况
  * Created by RuzzZZ on 2017/2/28.
  */
 public class OptionalDemo {
