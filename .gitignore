@@ -7,4 +7,4 @@
 target/
 logs/
 .idea/
-/src/main/java/com/xzy/test/*
+##/src/main/java/com/xzy/test/*
