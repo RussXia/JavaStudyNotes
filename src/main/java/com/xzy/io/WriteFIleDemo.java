@@ -1,5 +1,7 @@
 package com.xzy.io;
 
+import com.google.common.base.Charsets;
+
 import java.io.File;
 import java.io.IOException;
 import java.io.RandomAccessFile;
@@ -20,7 +22,10 @@ public class WriteFIleDemo {
         FileChannel channel = aFile.getChannel();
 
         ByteBuffer buf = ByteBuffer.allocate(1024);
-        buf.put("Hello World!".getBytes());
+        // TODO: 2017/3/22 乱码问题
+        buf.put("Hello World!".getBytes(Charsets.UTF_8))
+           .put("\t\nThis is a Test".getBytes(Charsets.UTF_8))
+           .put((byte)22);
         channel.write(buf);
         channel.close();
     }
