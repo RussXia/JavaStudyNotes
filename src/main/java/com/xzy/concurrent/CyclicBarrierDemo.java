@@ -2,8 +2,10 @@ package com.xzy.concurrent;
 
 
 import java.util.concurrent.CyclicBarrier;
-//静态导包
+
 import static java.lang.System.out;
+
+//静态导包
 
 /**
  * CyclicBarrier相比于CountDownLatch有一个Barrier(界限)的存在

@@ -2,8 +2,6 @@ package com.xzy.guava;
 
 import com.google.common.base.Splitter;
 
-import java.util.ArrayList;
-import java.util.List;
 import java.util.function.Consumer;
 
 /**

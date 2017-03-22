@@ -1,6 +1,9 @@
 package com.xzy.guava;
 
-import com.google.common.collect.*;
+import com.google.common.collect.HashMultiset;
+import com.google.common.collect.ImmutableList;
+import com.google.common.collect.ImmutableSet;
+import com.google.common.collect.Multiset;
 
 import java.util.ArrayList;
 import java.util.List;
