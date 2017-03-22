@@ -15,7 +15,7 @@ import java.io.IOException;
  */
 public class HttpDemo {
 
-    private static final String RESULT = "{success:true, message:\"%s is illegal!\"}";
+    private static final String RESULT = "{success:true, message:\"Thanks, now you can see the download URL.\"}";
 
     private static final String URL = "http://book.mvnsearch.org/person/invited.json?_dc=1490060108908&invitedCode=";
 
@@ -23,9 +23,9 @@ public class HttpDemo {
         HttpClient httpclient = new DefaultHttpClient();
         //97-122
         char a = 'a';
-        char b = 'd';
-        char c = 'p';
-        char d = 'g';
+        char b = 'k';
+        char c = 'd';
+        char d = 'f';
         do {
             String str = generateString(a, b, c, d);
             // 以get方式请求
@@ -38,7 +38,7 @@ public class HttpDemo {
             // 执行请求并获取结果
             String responseBody = httpclient.execute(httpGet, responseHandler);
             System.out.println("----------------------------------------");
-            if (!String.format(RESULT,str).equals(responseBody)) {
+            if (RESULT.equals(responseBody)) {
                 System.out.println("code : " + str);
                 System.out.println("response : " + responseBody);
                 break;
