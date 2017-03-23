@@ -21,11 +21,12 @@ public class WriteFIleDemo {
         RandomAccessFile aFile = new RandomAccessFile(file, "rw");
         FileChannel channel = aFile.getChannel();
 
-        ByteBuffer buf = ByteBuffer.allocate(1024);
-        // TODO: 2017/3/22 乱码问题
+        ByteBuffer buf = ByteBuffer.allocate(128);
         buf.put("Hello World!".getBytes(Charsets.UTF_8))
            .put("\t\nThis is a Test".getBytes(Charsets.UTF_8))
-           .put((byte)22);
+           //实际上保存到文件中的是ascii码对应的字符
+           .put((byte)96);
+        buf.flip();
         channel.write(buf);
         channel.close();
     }
