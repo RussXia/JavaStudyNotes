@@ -1,6 +1,0 @@
-Hello World!
-This is a Test text!
-Test NIO!
-Tdddddddddddd
-qqqqqqqqqqqq
-sssssssss

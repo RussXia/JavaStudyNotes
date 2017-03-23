@@ -7,4 +7,6 @@
 target/
 logs/
 .idea/
+Test1.txt
+Test2.txt
 ##/src/main/java/com/xzy/test/*
