@@ -1,14 +1,6 @@
-package com.xzy.encrypt;
+package com.xzy.util.encrypt;
 
 import org.junit.Test;
-
-import javax.crypto.BadPaddingException;
-import javax.crypto.IllegalBlockSizeException;
-import javax.crypto.NoSuchPaddingException;
-import java.io.UnsupportedEncodingException;
-import java.security.InvalidAlgorithmParameterException;
-import java.security.InvalidKeyException;
-import java.security.NoSuchAlgorithmException;
 
 /**
  * Created by RuzzZZ on 2017/6/2.

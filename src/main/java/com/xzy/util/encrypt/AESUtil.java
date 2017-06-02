@@ -1,4 +1,4 @@
-package com.xzy.encrypt;
+package com.xzy.util.encrypt;
 
 import org.apache.commons.codec.binary.Base64;
 
