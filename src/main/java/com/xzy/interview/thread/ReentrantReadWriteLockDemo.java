@@ -56,7 +56,8 @@ public class ReentrantReadWriteLockDemo {
     static int i, j = 0;
 
     public static void main(String[] args) {
-        for (; j < 10; j++) {
+        //争抢写锁
+        for (; j < 2; j++) {
             new Thread(new Runnable() {
                 @Override
                 public void run() {
@@ -77,8 +78,8 @@ public class ReentrantReadWriteLockDemo {
                 }
             }).start();
         }
-
-        for (; i < 2000; i++) {
+        //读锁,如果此时被写锁锁定，无法使用读锁
+        for (; i < 800; i++) {
             new Thread(new Runnable() {
                 @Override
                 public void run() {
@@ -98,6 +99,14 @@ public class ReentrantReadWriteLockDemo {
                     }
                 }
             }).start();
+        }
+        //最后修改map元素,writeLock在存在读锁时无法锁定
+        lock.writeLock().lock();
+        try {
+            System.out.println("修改map元素");
+            map.put(1, "hello");
+        } finally {
+            lock.writeLock().unlock();
         }
 
         while (lock.isWriteLocked()) {
