@@ -10,12 +10,7 @@ import java.util.concurrent.FutureTask;
 @Slf4j
 public class CallableApp {
     public static void main(String[] args) throws InterruptedException, ExecutionException {
-        Callable<Integer> callable = new Callable<Integer>() {
-            @Override
-            public Integer call() throws Exception {
-                return new Random().nextInt(100);
-            }
-        };
+        Callable<Integer> callable = () -> new Random().nextInt(100);
         FutureTask<Integer> task = new FutureTask<>(callable);
         //启动线程
         new Thread(task).start();
