@@ -7,6 +7,8 @@ import net.sf.cglib.proxy.MethodProxy;
 import java.lang.reflect.Method;
 
 /**
+ * -XX:MetaspaceSize=1m -XX:MaxMetaspaceSize=8m
+ *
  * @author RuzzZZ
  * @since 17/11/2017 5:49 PM
  */

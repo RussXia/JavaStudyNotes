@@ -4,6 +4,8 @@ import java.nio.ByteBuffer;
 import java.util.concurrent.TimeUnit;
 
 /**
+ * -XX:MaxDirectMemorySize=200m
+ *
  * @author RuzzZZ
  * @since 27/11/2017 10:13 AM
  */
