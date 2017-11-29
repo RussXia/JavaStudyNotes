@@ -1,4 +1,4 @@
-package com.xzy.jvmlearning;
+package com.xzy.jvmlearning.oom;
 
 /**
  * -Xss2m -XX:+PrintGCDetails

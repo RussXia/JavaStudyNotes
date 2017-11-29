@@ -1,4 +1,4 @@
-package com.xzy.jvmlearning;
+package com.xzy.jvmlearning.oom;
 
 import net.sf.cglib.proxy.Enhancer;
 import net.sf.cglib.proxy.MethodInterceptor;

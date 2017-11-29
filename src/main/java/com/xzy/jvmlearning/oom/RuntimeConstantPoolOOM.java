@@ -1,4 +1,4 @@
-package com.xzy.jvmlearning;
+package com.xzy.jvmlearning.oom;
 
 import java.util.ArrayList;
 import java.util.List;

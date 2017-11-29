@@ -1,4 +1,4 @@
-package com.xzy.jvmlearning;
+package com.xzy.jvmlearning.oom;
 
 import java.nio.ByteBuffer;
 import java.util.concurrent.TimeUnit;
