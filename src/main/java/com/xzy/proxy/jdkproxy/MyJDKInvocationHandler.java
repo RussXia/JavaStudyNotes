@@ -2,6 +2,7 @@ package com.xzy.proxy.jdkproxy;
 
 import java.lang.reflect.InvocationHandler;
 import java.lang.reflect.Method;
+import java.lang.reflect.Proxy;
 
 /**
  * Created by RuzzZZ on 2017/2/15.
@@ -10,26 +11,16 @@ public class MyJDKInvocationHandler implements InvocationHandler {
 
     private Object target;
 
-    public MyJDKInvocationHandler(Object target) {
-        super();
+    public <T> T bind(T target) {
         this.target = target;
-    }
-
-    public MyJDKInvocationHandler() {
-        super();
+        Object proxy = Proxy.newProxyInstance(target.getClass().getClassLoader(), target.getClass().getInterfaces(), this);
+        return (T) proxy;
     }
 
     @Override
     public Object invoke(Object proxy, Method method, Object[] args) throws Throwable {
-        if("getName".equals(method.getName())){
-            System.out.println("-------before " + method.getName() + "-------");
-            Object result = method.invoke(target, args);
-            System.out.println("-------after " + method.getName() + "-------");
-            return result;
-        }else{
-            Object result = method.invoke(target, args);
-            return result;
-        }
+        System.out.println("Proxy invoke");
+        return method.invoke(target, args);
     }
 
 }
