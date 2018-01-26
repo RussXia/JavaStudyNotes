@@ -11,6 +11,7 @@ import java.lang.reflect.Proxy;
 public class JDKProxyHandlerTest {
 
     public static void main(String[] args) {
+        System.getProperties().put("sun.misc.ProxyGenerator.saveGeneratedFiles","true");
         MyJDKInvocationHandler handler = new MyJDKInvocationHandler();
         UserService userService = handler.bind(new UserServiceImpl());
         //jdk主要针对的是接口。cglib主要针对的是实现类
