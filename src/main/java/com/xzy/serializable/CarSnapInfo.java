@@ -1,11 +1,16 @@
 package com.xzy.serializable;
 
+import lombok.Getter;
+import lombok.Setter;
+
 import java.io.Serializable;
 
 
 /**
  * Created by RuzzZZ on 2017/2/17.
  */
+@Getter
+@Setter
 public class CarSnapInfo implements Serializable {
     private static final long serialVersionUID = -7597039319847777313L;
     private Long carId;
@@ -16,7 +21,7 @@ public class CarSnapInfo implements Serializable {
     private Long seriesId;
     private String seriesName;
     private Long modelId;
-    private String modelName;
+    public String modelName;
     private Long innerId;
     private String innerName;
     private Long outerId;
@@ -26,150 +31,6 @@ public class CarSnapInfo implements Serializable {
     private String marketPrice;
     private String emission;
     private Integer attach;
-
-    public Long getCarId() {
-        return this.carId;
-    }
-
-    public void setCarId(Long carId) {
-        this.carId = carId;
-    }
-
-    public String getMarketPrice() {
-        return this.marketPrice;
-    }
-
-    public void setMarketPrice(String marketPrice) {
-        this.marketPrice = marketPrice;
-    }
-
-    public String getEmission() {
-        return this.emission;
-    }
-
-    public void setEmission(String emission) {
-        this.emission = emission;
-    }
-
-    public Integer getAttach() {
-        return this.attach;
-    }
-
-    public void setAttach(Integer attach) {
-        this.attach = attach;
-    }
-
-    public Integer getSpecId() {
-        return this.specId;
-    }
-
-    public void setSpecId(Integer specId) {
-        this.specId = specId;
-    }
-
-    public String getSpecName() {
-        return this.specName;
-    }
-
-    public void setSpecName(String specName) {
-        this.specName = specName;
-    }
-
-    public Long getSeriesId() {
-        return this.seriesId;
-    }
-
-    public void setSeriesId(Long seriesId) {
-        this.seriesId = seriesId;
-    }
-
-    public String getSeriesName() {
-        return this.seriesName;
-    }
-
-    public void setSeriesName(String seriesName) {
-        this.seriesName = seriesName;
-    }
-
-    public Long getBrandId() {
-        return this.brandId;
-    }
-
-    public void setBrandId(Long brandId) {
-        this.brandId = brandId;
-    }
-
-    public String getBrandName() {
-        return this.brandName;
-    }
-
-    public void setBrandName(String brandName) {
-        this.brandName = brandName;
-    }
-
-    public Long getModelId() {
-        return this.modelId;
-    }
-
-    public void setModelId(Long modelId) {
-        this.modelId = modelId;
-    }
-
-    public String getModelName() {
-        return this.modelName;
-    }
-
-    public void setModelName(String modelName) {
-        this.modelName = modelName;
-    }
-
-    public Integer getNumber() {
-        return this.number;
-    }
-
-    public void setNumber(Integer number) {
-        this.number = number;
-    }
-
-    public String getGuidePrice() {
-        return this.guidePrice;
-    }
-
-    public void setGuidePrice(String guidePrice) {
-        this.guidePrice = guidePrice;
-    }
-
-    public Long getInnerId() {
-        return this.innerId;
-    }
-
-    public void setInnerId(Long innerId) {
-        this.innerId = innerId;
-    }
-
-    public String getInnerName() {
-        return this.innerName;
-    }
-
-    public void setInnerName(String innerName) {
-        this.innerName = innerName;
-    }
-
-    public Long getOuterId() {
-        return this.outerId;
-    }
-
-    public void setOuterId(Long outerId) {
-        this.outerId = outerId;
-    }
-
-    public String getOuterName() {
-        return this.outerName;
-    }
-
-    public void setOuterName(String outerName) {
-        this.outerName = outerName;
-    }
 
     public CarSnapInfo() {
     }
