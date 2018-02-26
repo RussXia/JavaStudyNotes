@@ -2,7 +2,7 @@ package com.xzy.jvmlearning.gc;
 
 /**
  * -Xms20m -Xmx20m -Xmn10m -XX:+PrintGCDetails
- *
+ * finalize()方法只会被虚拟机执行一次!
  * @author RuzzZZ
  * @since 28/11/2017 4:37 PM
  */
@@ -19,6 +19,13 @@ public class FinalizeEscapeGC {
 
 
     public static void main(String[] args) throws InterruptedException {
+
+        String str1 = "Hello" ;
+        String str2 = new String("Hello") ;
+                System.out.println(str1.equals(str2)); // true;
+        System.out.println(str1 == str2); //false。
+
+
         SAVE_HOOK = new FinalizeEscapeGC();
 
         //在gc时，因为finalize方法，对象第一次挽救自己
