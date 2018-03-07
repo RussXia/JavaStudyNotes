@@ -1,5 +1,6 @@
 package com.xzy.algorithm.binarytree;
 
+import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Stack;
@@ -23,13 +24,17 @@ public class RecurseTreeNode {
         System.out.println();
 
         //非递归前序遍历
-        List<Integer> result = traverseTreeNodeFront(treeNode);
-        System.out.println(result);
+        List<Integer> result1 = traverseTreeNodeFront(treeNode);
+        System.out.println(result1);
 
 
         //中序遍历:4,1,6,13,11,2,9,17,8,9,6,15,13,8,11
         recurseMid(treeNode);
         System.out.println();
+
+        //非递归中序遍历
+        List<Integer> result2 = traverseTreeNodeMid(treeNode);
+        System.out.println(result2);
 
         //后序遍历:4,6,1,11,9,2,13,8,6,9,13,11,8,15,17
         recurseEnd(treeNode);
@@ -77,14 +82,23 @@ public class RecurseTreeNode {
 
     /**
      * 非递归方式中序遍历二叉树
-     * @param treeNode  需要遍历的二叉树
-     * @return  遍历出来的list结果集
+     * @param treeNode 需要遍历的二叉树
+     * @return 遍历出来的list结果集
      */
     public static List<Integer> traverseTreeNodeMid(TreeNode treeNode) {
-        List<Integer> list = new LinkedList<>();
+        List<Integer> list = new ArrayList<>();
+
         Stack<TreeNode> stack = new Stack<>();
-        if(treeNode == null){
-            return list;
+        TreeNode cur = treeNode;
+
+        while (cur != null || !stack.empty()) {
+            while (cur != null) {
+                stack.add(cur);
+                cur = cur.getLeft();
+            }
+            cur = stack.pop();
+            list.add(cur.getValue());
+            cur = cur.getRight();
         }
         return list;
     }
