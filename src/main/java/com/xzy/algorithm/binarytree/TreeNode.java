@@ -58,6 +58,20 @@ public class TreeNode {
     }
 
     /**
+     * 递归获取当前树的深度
+     * @param treeNode
+     * @return
+     */
+    public int getTreeDepth(TreeNode treeNode) {
+        if (treeNode == null) {
+            return 0;
+        }
+        int left = getTreeDepth(treeNode.left);
+        int right = getTreeDepth(treeNode.right);
+        return left > right ? left + 1 : right + 1;
+    }
+
+    /**
      * 向二叉树的最左子节点添加节点
      *
      * @param treeNode    二叉树
