@@ -1,5 +1,10 @@
 package com.xzy;
 
+import java.sql.Timestamp;
+import java.time.LocalDateTime;
+import java.time.Month;
+import java.time.MonthDay;
+
 import static java.lang.System.out;
 
 /**
@@ -52,5 +57,8 @@ public class IamAPainter {
      */
     public static void main(String[] args) {
         out.println("To be or not to be , this is a question!");
+        LocalDateTime localDateTime = LocalDateTime.of(2018, Month.JANUARY, 1, 0, 0, 0, 0);
+        System.out.println(Timestamp.valueOf(localDateTime).getTime());
+
     }
 }
