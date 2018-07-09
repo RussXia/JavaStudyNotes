@@ -5,6 +5,7 @@ import java.util.concurrent.*;
 /**
  * 计数器，作用类似于阀门。
  * 最多只能达到permits个允许项工作，超过的则阻塞等待
+ * (RateLimiter)
  * 支持公平锁
  * Created by RuzzZZ on 2017/2/8.
  */

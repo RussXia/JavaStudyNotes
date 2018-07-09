@@ -24,6 +24,20 @@
             <version>21.0</version>
         </dependency>
 
+        <!-- https://mvnrepository.com/artifact/com.caucho/hessian -->
+        <dependency>
+            <groupId>com.caucho</groupId>
+            <artifactId>hessian</artifactId>
+            <version>4.0.51</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.esotericsoftware</groupId>
+            <artifactId>reflectasm</artifactId>
+            <version>1.11.7</version>
+        </dependency>
+
+
         <!-- https://mvnrepository.com/artifact/org.apache.httpcomponents/httpclient -->
         <dependency>
             <groupId>org.apache.httpcomponents</groupId>
