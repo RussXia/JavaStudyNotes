@@ -22,4 +22,14 @@ public class QueryTransportPriceForm implements Serializable {
     private String name;
     private Integer test;
     private List<CarSnapInfo> carInfoList;
+
+    public String testStr;
+
+    public String sayHello(String str) {
+        int sum = 0;
+        for (int i = 0; i < 1000; i++) {
+            sum += i;
+        }
+        return "Hello" + str;
+    }
 }

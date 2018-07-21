@@ -4,6 +4,7 @@ import java.sql.Timestamp;
 import java.time.LocalDateTime;
 import java.time.Month;
 import java.time.MonthDay;
+import java.util.Date;
 
 import static java.lang.System.out;
 
@@ -60,5 +61,6 @@ public class IamAPainter {
         LocalDateTime localDateTime = LocalDateTime.of(2018, Month.JANUARY, 1, 0, 0, 0, 0);
         System.out.println(Timestamp.valueOf(localDateTime).getTime());
 
+        System.out.println(new Date().getTime());
     }
 }

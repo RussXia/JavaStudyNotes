@@ -1,4 +1,4 @@
-package com.xzy.guava;
+package com.xzy.guava.cache;
 
 import com.google.common.cache.*;
 
