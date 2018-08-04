@@ -9,7 +9,7 @@ import java.util.concurrent.ExecutionException;
 import java.util.concurrent.TimeUnit;
 
 @Slf4j
-public abstract class LoadingCacheTemplate<K, V> implements LocalCachePolicy  {
+public abstract class LoadingCacheTemplate<K, V> implements LocalCachePolicy {
 
 
     private LoadingCache<K, V> loadingCache;
@@ -26,7 +26,7 @@ public abstract class LoadingCacheTemplate<K, V> implements LocalCachePolicy  {
                 .expireAfterAccess(expire(), TimeUnit.MILLISECONDS)
                 .build(new CacheLoader<K, V>() {
                     @Override
-                    public V load(K key) throws Exception {
+                    public V load(K key) {
                         V v = loadKey(key);
                         if (v == null) {
                             loadingCache.invalidate(key);
@@ -42,6 +42,7 @@ public abstract class LoadingCacheTemplate<K, V> implements LocalCachePolicy  {
 
     public V get(K k) {
         try {
+            log.info("start getting key:{}", k);
             return loadingCache.get(k);
         } catch (ExecutionException e) {
             log.error("get V from cache failed, K - {} , e- {}", k, e);

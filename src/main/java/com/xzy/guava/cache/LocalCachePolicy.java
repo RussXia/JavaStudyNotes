@@ -18,6 +18,6 @@ public interface LocalCachePolicy {
      * @return
      */
     default long expire() {
-        return 100000000*2;
+        return 1000*2;
     }
 }

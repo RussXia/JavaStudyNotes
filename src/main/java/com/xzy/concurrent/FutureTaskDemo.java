@@ -1,5 +1,7 @@
 package com.xzy.concurrent;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.concurrent.*;
 
 /**
@@ -13,13 +15,12 @@ public class FutureTaskDemo {
     public static void main(String[] args) {
         ExecutorService exec= Executors.newCachedThreadPool();
 
-        FutureTask<String> task=new FutureTask<>(new Callable<String>(){//FutrueTask的构造参数是一个Callable接口
-            @Override
-            public String call() throws Exception {
-                //模拟大量计算
-                Thread.sleep(5000L);
-                return Thread.currentThread().getName();//这里可以是一个异步操作
-            }});
+        //FutrueTask的构造参数是一个Callable接口
+        FutureTask<String> task=new FutureTask<>(() -> {
+            //模拟大量计算
+            Thread.sleep(5000L);
+            return Thread.currentThread().getName();//这里可以是一个异步操作
+        });
 
         try {
             exec.execute(task);
@@ -27,11 +28,9 @@ public class FutureTaskDemo {
             //取得异步计算的结果，如果没有返回，就会一直阻塞等待
             String result=task.get();
             System.out.printf("get:%s%n",result);
-        } catch (InterruptedException e) {
+        } catch (InterruptedException | ExecutionException e) {
             e.printStackTrace();
-        } catch (ExecutionException e) {
-            e.printStackTrace();
-        }finally {
+        } finally {
             exec.shutdown();
         }
     }
