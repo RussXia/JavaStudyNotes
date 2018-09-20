@@ -6,27 +6,19 @@ import java.util.concurrent.locks.Lock;
 
 public class CLHLockTest {
 
-    static int count = 0;
+    private static int count = 0;
 
-    public static void main(String[] args) throws InterruptedException {
-        final CyclicBarrier cb = new CyclicBarrier(10, new Runnable() {
-            @Override
-            public void run() {
-                System.out.println(count);
-            }
-        });
+    public static void main(String[] args) {
+        final CyclicBarrier cb = new CyclicBarrier(10, () -> System.out.println(count));
 
         CLHLock clhLock = new CLHLock();
         for (int i = 0; i < 10; i++) {
-            new Thread(new Runnable() {
-                @Override
-                public void run() {
-                    testLock(clhLock);
-                    try {
-                        cb.await();
-                    } catch (InterruptedException | BrokenBarrierException e) {
-                        e.printStackTrace();
-                    }
+            new Thread(() -> {
+                testLock(clhLock);
+                try {
+                    cb.await();
+                } catch (InterruptedException | BrokenBarrierException e) {
+                    e.printStackTrace();
                 }
             }).start();
 

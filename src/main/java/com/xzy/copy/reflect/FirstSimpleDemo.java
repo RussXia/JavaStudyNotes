@@ -1,4 +1,4 @@
-package com.xzy.reflect;
+package com.xzy.copy.reflect;
 
 import java.lang.reflect.Field;
 import java.lang.reflect.Method;
@@ -6,7 +6,7 @@ import java.lang.reflect.Method;
 /**
  * Created by RuzzZZ on 2017/2/20.
  */
-public class FirstSimpleDem {
+public class FirstSimpleDemo {
 
     public Integer field1;
 
@@ -26,7 +26,7 @@ public class FirstSimpleDem {
 
     public static void main(String[] args) throws ClassNotFoundException {
 //        Class clazz = FirstSimpleDem.class;
-        Class clazz = Class.forName("com.xzy.reflect.FirstSimpleDem");
+        Class clazz = Class.forName("com.xzy.copy.reflect.FirstSimpleDemo");
         System.out.println("类名：" + clazz.getSimpleName());
         System.out.println("全限定类名：" + clazz.getName());
 

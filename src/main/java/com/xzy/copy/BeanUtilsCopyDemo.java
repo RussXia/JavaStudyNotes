@@ -83,6 +83,20 @@ public class BeanUtilsCopyDemo {
             System.out.println("CarSnapInfoDTO : " + JSONObject.toJSONString(copyBeanDTO));
         }
 
+        {
+            CopyBeanDO copyBeanDO = new CopyBeanDO(100, true, 3.21f, 3.21, 100L, 'c', (byte) 3, (short) 3, Integer.MIN_VALUE, Boolean.TRUE,
+                    Float.MAX_VALUE, Double.MAX_VALUE, Long.MAX_VALUE, Short.MAX_VALUE, Byte.MAX_VALUE, BigInteger.ONE, BigDecimal.ONE, "test");
+            BeanCopier copier = BeanCopier.create(CopyBeanDO.class, CopyBeanDTO.class, false);
+            Long startTime = System.currentTimeMillis();
+            CopyBeanDTO copyBeanDTO = new CopyBeanDTO();
+            for (int i = 0; i < LOOP_TIME; i++) {
+                copier.copy(copyBeanDO, copyBeanDTO, null);
+            }
+            Long end = System.currentTimeMillis();
+            System.out.println("BeanCopier : " + (end - startTime));
+            System.out.println("CarSnapInfoDTO2 : " + JSONObject.toJSONString(copyBeanDTO));
+        }
+
     }
 
     private static void copyBean(CopyBeanDO copyBeanDO, CopyBeanDTO copyBeanDTO) {

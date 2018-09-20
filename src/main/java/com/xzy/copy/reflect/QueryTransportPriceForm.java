@@ -1,4 +1,4 @@
-package com.xzy.reflect;
+package com.xzy.copy.reflect;
 
 import com.xzy.serializable.CarSnapInfo;
 import lombok.AllArgsConstructor;

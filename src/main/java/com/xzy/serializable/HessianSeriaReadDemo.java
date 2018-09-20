@@ -15,7 +15,7 @@ public class HessianSeriaReadDemo {
         ByteArrayInputStream is = new ByteArrayInputStream(formByte);
         //Hessian的反序列化读取对象
         HessianInput hi = new HessianInput(is);
-        QueryTransportPriceForm priceForm = (QueryTransportPriceForm) hi.readObject();
-        System.out.println(priceForm);
+        CarSnapInfo carSnapInfo = (CarSnapInfo) hi.readObject();
+        System.out.println(carSnapInfo);
     }
 }

@@ -14,4 +14,7 @@ public class CarSnapInfo implements Serializable {
     private Long carId;
     private String modelName;
     private String name;
+    private java.util.Date date1;
+    private java.util.Date date2;
+    private java.sql.Date date3;
 }
