@@ -1,5 +1,7 @@
 package com.xzy.util.encrypt;
 
+import com.alibaba.fastjson.JSONObject;
+
 import java.nio.charset.Charset;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
@@ -76,9 +78,16 @@ public class MD5Util {
         return new String(resultCharArray);
     }
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws NoSuchAlgorithmException {
         System.out.println(MD5Util.simpleStringMD5("hello1234"));
-        System.out.println(MD5Util.stringMD5("hello1234"));
+        System.out.println(MD5Util.stringMD5("hello world"));
         System.out.println(MD5Util.customMD5("hello1234","salt"));
+        String data = "hello world";
+        MessageDigest messageDigest = MessageDigest.getInstance("MD5");
+        byte[] inputByteArray = data.getBytes(Charset.forName("UTF-8"));
+        messageDigest.update(inputByteArray);
+        byte[] resultByteArray = messageDigest.digest();
+        String result = new String(resultByteArray);
+        System.out.println(JSONObject.toJSONString(resultByteArray));
     }
 }

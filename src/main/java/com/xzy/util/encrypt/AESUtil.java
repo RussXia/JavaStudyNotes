@@ -56,4 +56,10 @@ public class AESUtil {
         byte[] original = cipher.doFinal(encrypted1);
         return new String(original, "UTF-8");
     }
+
+    public static void main(String[] args) throws UnsupportedEncodingException, NoSuchAlgorithmException, IllegalBlockSizeException, InvalidAlgorithmParameterException, BadPaddingException, NoSuchPaddingException, InvalidKeyException {
+        AESUtil aesUtil = new AESUtil("cmVhZHkgdG8gZ28=");
+        String content = aesUtil.encrypt("helloworld");
+        System.out.println(content);
+    }
 }
