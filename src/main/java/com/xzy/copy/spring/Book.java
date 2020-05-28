@@ -1,6 +1,5 @@
 package com.xzy.copy.spring;
 
-import com.xzy.copy.spring.BaseDomain;
 import lombok.Data;
 
 @Data

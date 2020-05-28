@@ -2,7 +2,6 @@ package com.xzy.serializable;
 
 import com.caucho.hessian.io.Hessian2Input;
 import com.caucho.hessian.io.Hessian2Output;
-import org.testng.Assert;
 
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
@@ -34,13 +33,11 @@ public class HessianSerializer {
 
     public static void main(String[] args) {
         Byte type = 1;
-        Assert.assertTrue(type == Byte.valueOf("1"));
         HessianSerializer hessianSerializer = new HessianSerializer();
         byte[] serialResult = hessianSerializer.serialize(type);
         Byte deSerialType = hessianSerializer.deserialize(serialResult, Byte.class);
         System.out.println(deSerialType.hashCode());
         System.out.println(type.hashCode());
-        Assert.assertTrue(deSerialType == type);
     }
 
 }

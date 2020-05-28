@@ -10,7 +10,7 @@ import java.io.Serializable;
  */
 @Data
 public class CarSnapInfo implements Serializable {
-    private static final long serialVersionUID = -6331372047336357656L;
+    private static final long serialVersionUID = -4341372047336357656L;
     private Long carId;
     private String modelName;
     private String name;

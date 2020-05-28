@@ -10,7 +10,7 @@ import java.util.concurrent.TimeUnit;
  */
 public class ThreadLocalDemo implements Runnable {
 
-    private ThreadLocal<Integer> threadLocal = new ThreadLocal<>();
+    private static ThreadLocal<Integer> threadLocal = new ThreadLocal<>();
 
     @Override
     public void run() {

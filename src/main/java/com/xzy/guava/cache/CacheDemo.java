@@ -27,6 +27,7 @@ public class CacheDemo {
         LoadingCache<Object, Object> cache = CacheBuilder.newBuilder()
                 .maximumSize(5)
                 .expireAfterWrite(5, TimeUnit.SECONDS)
+                .softValues()
                 .removalListener(listener).build(
                         new CacheLoader<Object, Object>() {
                             @Override

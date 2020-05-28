@@ -15,48 +15,37 @@ import java.util.concurrent.CountDownLatch;
  */
 public class CountDownLatchDemo {
 
-    private static final int COUNT = 10;
-
     private static class Printer implements Runnable {
-        private final CountDownLatch startLatch;
-        private final CountDownLatch doneLatch;
-        private int beginIndex;
+        private final CountDownLatch count;
 
-        private Printer(int beginIndex, CountDownLatch startLatch, CountDownLatch doneLatch) {
-            this.startLatch = startLatch;
-            this.doneLatch = doneLatch;
-            this.beginIndex = beginIndex;
+        private Printer(CountDownLatch count) {
+            this.count = count;
         }
 
         public void run() {
-            try {
-                //所有线程等待信号，同时开始任务
-                startLatch.await();
-                beginIndex = beginIndex * 10 + 1;
-                for (int i = 0; i < 10; i++) {
-                    System.out.println(beginIndex + i);
-                }
-            } catch (InterruptedException e) {
-                e.printStackTrace();
-            } finally {
-                //线程结束后，将doneLatch进行-1
-                doneLatch.countDown();
-            }
+            System.out.println(Thread.currentThread().getName() + " ready");
+            count.countDown();
         }
     }
 
     public static void main(String[] args) throws InterruptedException {
-        CountDownLatch startLatch = new CountDownLatch(1);
-        CountDownLatch doneLatch = new CountDownLatch(COUNT);
+        CountDownLatch count = new CountDownLatch(10);
         for (int i = 0; i < 10; i++) {
             //开启10个线程
-            new Thread(new Printer(i, startLatch, doneLatch)).start();
+            new Thread(new Printer(count), "work_thread-" + i).start();
         }
-        System.out.println("所有线程准备开始!");
-        startLatch.countDown();
+        new Thread(() -> {
+            try {
+                count.await();
+                System.out.println(Thread.currentThread().getName() + ":-- all ready");
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+        }, "personal-thread").start();
         //阻塞主线程，等待结束信号变为0时进行工作
-        doneLatch.await();
-        System.out.println("所有线程准备开始!");
+        count.await();
+        System.out.println(Thread.currentThread().getName() + ":所有线程准备开始!");
+        Thread.sleep(2000);
     }
 
 }
